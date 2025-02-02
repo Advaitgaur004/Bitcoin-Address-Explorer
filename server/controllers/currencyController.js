@@ -10,7 +10,7 @@ const getBTCPrice = async (req, res) => {
     if (cachedPrice) return res.json(Number(cachedPrice));
 
     const response = await axios.get(
-      `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`
+      `https://coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`
     );
 
     const price = response.data.bitcoin[currency.toLowerCase()];
