@@ -52,4 +52,36 @@ const getAddressTransactions = async (req, res) => {
   }
 };
 
-module.exports = { getAddressBalance, getAddressTransactions };
+const getHistoricalData = async (req, res) => {
+  try {
+    const { address } = req.params;
+    const response = await axios.get(
+      `https://blockchain.info/rawaddr/${address}`
+    );
+    res.json(response.data);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch historical data' });
+  }
+};
+
+const getTransactionCount = async (req, res) => {
+  try {
+    const { address } = req.params;
+    const response = await axios.get(
+      `https://blockchain.info/rawaddr/${address}`
+    );
+    const transactionCount = response.data.n_tx;
+    res.json({ address, transactionCount });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch transaction count' });
+  }
+};
+
+const validateAddress = (req, res) => {
+  const { address } = req.params;
+  const isValid = /^(1|3|bc1)[a-zA-Z0-9]{25,39}$/.test(address);
+  res.json({ address, valid: isValid });
+};
+
+// Export the new functions
+module.exports = { getAddressBalance, getAddressTransactions, getHistoricalData, getTransactionCount, validateAddress };

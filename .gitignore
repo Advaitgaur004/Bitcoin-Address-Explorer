@@ -45,3 +45,5 @@ docker-compose.override.yml
 
 # TypeScript
 *.tsbuildinfo
+
+*package-lock.json

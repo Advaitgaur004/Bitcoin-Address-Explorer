@@ -3,23 +3,24 @@
     "version": "1.0.0",
     "main": "app.js",
     "scripts": {
-      "start": "node app.js",
-      "dev": "nodemon app.js",
-      "test": "jest"
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "test": "jest"
     },
     "dependencies": {
-      "express": "^4.18.2",
-      "axios": "^1.6.2",
-      "redis": "^4.6.13",
-      "dotenv": "^16.3.1",
-      "cors": "^2.8.5",
-      "express-rate-limit": "^6.8.1",
-      "helmet": "^7.1.0",
-      "morgan": "^1.10.0",
-      "validator": "^13.11.0"
+        "axios": "^1.6.2",
+        "bitcoin-server": "file:",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "express-rate-limit": "^6.8.1",
+        "helmet": "^7.1.0",
+        "morgan": "^1.10.0",
+        "redis": "^4.6.13",
+        "validator": "^13.11.0"
     },
     "devDependencies": {
-      "nodemon": "^3.0.2",
-      "jest": "^29.7.0"
+        "jest": "^29.7.0",
+        "nodemon": "^3.0.2"
     }
-  }
+}
